@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' ">
+    <title>User Guide</title>
+    <script>
+        const openVaibhavMojidraWebsite = () => {
+            require('electron').shell.openExternal("https://vaibhavmojidra.github.io/site/")
+        }
+    </script>
+</head>
+
+<body style="text-align: center;background-color: #ECEFF1;margin: 0px;">
+    <img src="./../assets/icons/Icon_1024x1024.png" style="width: 100px;height: 100px;margin-top: 30px;"
+        alt="vaibhav mojidra" />
+    <div style="font-size: 24px; margin-top: 15px;font-family: sans-serif;">USER GUIDE</div>
+    <div style="font-family: sans-serif;margin-top: 10px;font-size: 14px;">COUNT THE LINES<br> OF CODE</div>
+
+    <br><br>
+    <div style="font-size: 18px; margin-top: 15px;font-family: sans-serif;">THINGS TO REMEMBER BEFORE USE</div>
+
+    <div style="font-size: 16px; margin-top: 16px;font-family: sans-serif;text-align: left;padding-left:
+        10px;padding-right: 10px;">
+        <p>This software allows you to count the lines of code in your project/app. Even while it can be done in one
+            click, eliminating the tedious task of manually counting the lines of each file by opening one by one, we
+            nevertheless recommend that users verify the following before selecting the project folder for scan:</p>
+        <p>To begin with, while there is no harm in using the original project folder, we strongly advise you to create
+            a local copy of the original project folder.</p>
+        <p>When calculating the lines of code, we use the following criteria:</p>
+        <p>1. The following file extensions will be excluded from the scanning
+            process: .pdf, .png, .jpg, .jpeg, .gif, .mp4, .mov, and .svg.</p>
+        <p>2. It will also exclude hidden files and folders, for example, <i>.git</i> folder.</p>
+        <p>3. It will exclude the .DS_Store file, which is found in the majority of Mac OS directories.</p>
+        <p>4. Finally, count code excluding the empty-lines for example in below code you can see there are 15 lines but
+            there are 4 empty lines (line 2, 4, 6 & 11) in those 15 lines that means the lines of code is 11 lines so
+            scan will count 11 lines for this code.</p>
+        <img src="../assets/user_guide_img/empty_line.png" style="width: calc(100vw - 20px);" />
+        <p>Assuming you created a copy of the original folder, we recommend that you make certain changes to the copied
+            folder before scanning it.</p>
+        <p>This is completely optional, but many projects have a large library/dependency folder that we shouldn't count
+            lines of code in, for example, the <i>node_modules</i> folder. It's a good idea to delete such folders/files
+            from
+            the copy folder (copy of the original project folder) before scanning (if not it will be also included in
+            scan).
+    </div>
+    <br>
+    <div style="font-size: 18px; margin-top: 15px;font-family: sans-serif;">STEPS TO SCAN</div>
+    <div style="font-size: 16px; margin-top: 16px;font-family: sans-serif;text-align: left;padding-left:
+        10px;padding-right: 10px;">
+        <p>1. Choose the copy of project folder/project folder by clicking <b>CHOOSE PROJECT FOLDER</b> button or using
+            shortcuts
+            <b>⌘+O</b>
+            (for Mac OS) and <b>CTRL+O</b> (for non-Mac OS).
+        </p>
+        <p>2. A path will be shown below <b>CHOOSE PROJECT FOLDER</b> button recheck that path for confirming and click
+            <b>SCAN</b> button or using
+            shortcuts
+            <b>⌘+S</b>
+            (for Mac OS) and <b>CTRL+S</b> (for non-Mac OS).
+        </p>
+        <p><i>It might take some time to scan based on your processor and number of files.</i></p>
+        <p>3. Result will be shown below you can see the total count prior to <b>COPY</b> button or using
+            shortcuts
+            <b>⌘+C</b>
+            (for Mac OS) and <b>CTRL+C</b> (for non-Mac OS).
+        </p>
+        <img src="../assets/user_guide_img/copy_button.png" style="width: calc(100vw - 20px);" />
+        <p>4. You can use the <b>COPY</b> button to copy the count however you can review the files in
+            result and can exclude/include files in result and it will instantly update count <b>NO NEED TO RE-SCAN
+                IT</b>.</p>
+        <img src="../assets/user_guide_img/include.png" style="width: calc(100vw - 20px);" />
+        <img src="../assets/user_guide_img/exclude.png" style="width: calc(100vw - 20px);" />
+        <p>5. You will get individual line count for each with path and file name to review. You can modifiy and
+            according get instant count in result. <b>REMEMBER DO NOT RE-SCAN IT</b></p>
+        <p>Additionally you can switch between dark and light mode. By default it will be dark mode. Shortcuts
+            <b>⌘+M</b>
+            (for Mac OS) and <b>CTRL+M</b> (for non-Mac OS).</b>
+        </p>
+    </div>
+
+    <div style="font-size: 20px;margin: 15px;cursor: pointer;" onclick="openVaibhavMojidraWebsite()"> Developer Vaibhav
+        Mojidra</div>
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+:root {
+    --page_bg: #121212;
+    --text_color: #FDFDFD;
+    --card_bg: #262626;
+    --button_color: #f5f5f5;
+    --button_text_color: #333333;
+    --toast_back_color: #B0BEC5;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    background-color: var(--card_bg);
+    margin-bottom: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    transition: 1s
+}
+
+.cardURL {
+    font-size: 14px;
+    height: 30px;
+    border: 0;
+    width: 100%;
+    background-color: var(--card_bg);
+    color: var(--text_color);
+    transition: 1s
+}
+
+.myButton {
+    background-color: var(--button_color);
+    color: var(--button_text_color);
+    height: 35px;
+    border-radius: 3px;
+    text-decoration: none;
+    display: inline-block;
+    border: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    cursor: pointer
+}
+
+.cardTable {
+    width: 100%;
+    margin-top: 10px
+}
+
+.cardFileName {
+    vertical-align: middle;
+    font-size: 18px;
+    padding-left: 10px;
+    font-family: sans-serif;
+    color: var(--text_color)
+}
+
+.cardFileCount {
+    vertical-align: middle;
+    font-size: 17px;
+    padding-left: 10px;
+    font-family: sans-serif;
+    color: var(--text_color);
+    text-align: right;
+}
+
+.cardButtonHolder {
+    text-align: right;
+    padding-right: 10px;
+    vertical-align: middle;
+    width: 65px;
+}
+
+.cardButton {
+    color: #FDFDFD;
+    height: 35px;
+    border-radius: 3px;
+    text-decoration: none;
+    display: inline-block;
+    border: none;
+    margin-left: 7px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}

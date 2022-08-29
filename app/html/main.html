@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count The Lines Of Code - Vaibhav Mojidra</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' ">
+    <script src="../js/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/main.css" />
+    <link rel="stylesheet" type="text/css" href="../css/loader.css" />
+</head>
+
+<body style="margin: 0;background-color: var(--page_bg);transition: 1s;" onresize="setDivsSizes()" onload="init()">
+    <div style="height: 100px">
+        <table style="width: 100vw;margin-top: 10px;">
+            <tr>
+                <td style="vertical-align:middle">
+                    <button id="pathChooserBtn" style="margin-left: 7px;margin-left: 15px;" class="myButton"
+                        onclick="setFolderPath()">CHOOSE
+                        PROJECT
+                        FOLDER</button>
+                    <button id="calculateBtn" style="margin-left: 7px;" class="myButton"
+                        onclick="calculate()">SCAN</button>
+                </td>
+                <td style="vertical-align:middle;">
+                    <span id="totalNumberOfLines"
+                        style="color: var(--text_color);font-family: sans-serif;font-size: 18px;padding-left: 10px;padding-right:10px;">0</span>
+                    <button class="myButton" onclick="copyToClipboard()">COPY</button>
+                </td>
+                <td style="text-align: right;padding-right: 10px;vertical-align:middle;">
+                    <img id="darkmodeImg" src="../assets/img/off.png" style="cursor: pointer;" height="30px"
+                        width="30px" onclick="darkModeSwitch()" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" style="padding-left: 10px;padding-right: 10px;">
+                    <input type="text" readonly value="" id="projectFolderPath"
+                        style="font-size: 20px;height: 30px;border: 0;width: 100%;background-color: var(--page_bg);color: var(--text_color);transition: 1s;" />
+                </td>
+            </tr>
+        </table>
+
+    </div>
+
+    <div style="height: 50px;display: none;" id="include">
+        <table style="width: 100vw;">
+            <tr style="color: var(--button_color); font-family: sans-serif;font-size: 20px;">
+                <td style="padding-left: 15px;" id="fileIncludeLabel"></td>
+                <td style="text-align: right;padding-right: 10px;" id="fileTotalLabel"></td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="filesList" style="height:0px; width: 100vw;overflow-y: auto;display: none;">
+    </div>
+
+    <div style="height: 50px;display: none;" id="exclude"><span style="color: var(--button_color);
+        font-family: sans-serif;
+        font-size: 20px;
+        padding-left: 15px;
+        display: table-cell;
+        vertical-align: middle;" id="fileExcludeLabel"></span></div>
+
+    <div id="binList" style="height:0px; width: 100vw;overflow-y: auto;display: none;">
+    </div>
+
+    <div id="loaderDiv" style="display: none;">
+        <svg version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" x="0px"
+            y="0px" style="display: none;">
+            <symbol id="wave">
+                <path
+                    d="M420,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C514,6.5,518,4.7,528.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H420z">
+                </path>
+                <path
+                    d="M420,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C326,6.5,322,4.7,311.5,2.7C304.3,1.4,293.6-0.1,280,0c0,0,0,0,0,0v20H420z">
+                </path>
+                <path
+                    d="M140,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C234,6.5,238,4.7,248.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H140z">
+                </path>
+                <path
+                    d="M140,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C46,6.5,42,4.7,31.5,2.7C24.3,1.4,13.6-0.1,0,0c0,0,0,0,0,0l0,20H140z">
+                </path>
+            </symbol>
+        </svg>
+        <div class="water-jar" style="transition: 1s;">
+            <div class="water-filling">
+                <div class="percentNum" style="color: var(--text_color);" id="count">0</div>
+                <div class="percentB" style="color: var(--text_color);">%</div>
+            </div>
+            <div id="water" class="water">
+                <svg viewBox="0 0 560 20" class="water_wave water_wave_back">
+                    <use xlink:href="#wave"></use>
+                </svg>
+                <svg viewBox="0 0 560 20" class="water_wave water_wave_front">
+                    <use xlink:href="#wave"></use>
+                </svg>
+            </div>
+        </div>
+    </div>
+    <div id="toastDiv" style="display:none">
+
+    </div>
+
+</body>
+
+</html>
