@@ -20,7 +20,7 @@ When calculating the lines of code, we use the following criteria:
 1. The following file extensions will be excluded from the scanning process: .pdf, .png, .jpg, .jpeg, .gif, .mp4, .mov, and .svg.
 2. It will also exclude hidden files and folders, for example, *.git* folder.
 3. It will exclude the .DS_Store file, which is found in the majority of Mac OS directories.
-4. 4. Finally, count code excluding the empty-lines for example in code if there are 15 lines but there are 4 empty lines (line 2, 4, 6 & 11) in those 15 lines that means the lines of code is 11 lines so scan will count 11 lines for this code.
+4. Finally, count code excluding the empty-lines for example in code if there are 15 lines but there are 4 empty lines (line 2, 4, 6 & 11) in those 15 lines that means the lines of code is 11 lines so scan will count 11 lines for this code.
 
 Assuming you created a copy of the original folder, we recommend that you make certain changes to the copied folder before scanning it.
 This is completely optional, but many projects have a large library/dependency folder that we shouldn't count lines of code in, for example, the *node_modules* folder. It's a good idea to delete such folders/files from the copy folder (copy of the original project folder) before scanning (if not it will be also included in scan).
